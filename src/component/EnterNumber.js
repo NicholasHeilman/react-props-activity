@@ -4,23 +4,23 @@ class EnterNumber extends Component {
     constructor(props){
         super(props);
         this.state = {
-            incrementNumber: '' ,
+            Number: '' ,
         }
     }
 
     onIncrementNumber = (event)=> {
         this.setState({
-            incrementNumber: event.target.value,
+            Number: event.target.value,
         })
     }
     
 
     addNumber = (event) => {
-        this.props.increasaNumber(this.state.incrementNumber)
+        this.props.increasaNumber(this.state.Number)
     }
     
     minusNumber = (event)=>{
-        this.props.decreaseNumber(this.state.incrementNumber)
+        this.props.decreaseNumber(this.state.Number)
     }
         
     render(){
@@ -35,7 +35,7 @@ class EnterNumber extends Component {
                placeholder="Enter Number" />
         <button classeName="DownBtn"
                 onClick={this.minusNumber}>Minus</button>
-                {/* {JSON.stringify(this.state.incrementNumber)} */}
+                {/* {JSON.stringify(this.state.Number)} */}
     </div>
         )
     }
