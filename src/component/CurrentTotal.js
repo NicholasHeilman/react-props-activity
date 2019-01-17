@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 
 class CurrentTotal extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            Number: '',
-        }
-    }
- 
-    currentTotal = (event) => {
-        this.props.total
-    }
+
 
     render(){
-        return(
-           <div>
-            {currentTotal}
 
-        </div>
+        return(
+            <div>
+                <h2>Current Total</h2>
+                <h3>{this.props.currentTotal}</h3>
+
+            </div>
         ) 
     }
 }

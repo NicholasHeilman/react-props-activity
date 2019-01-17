@@ -12,9 +12,7 @@ class History extends Component{
         <div>
             <h2>History</h2>
             {JSON.stringify(this.props.numList)}
-        <ul>
-            {historyList}
-        </ul>
+     
         </div>    
         )
     }

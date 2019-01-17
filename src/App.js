@@ -3,6 +3,7 @@ import './App.css';
 import Header from './component/Header.js';
 import EnterNumber from './component/EnterNumber.js';
 import CurrentTotal from './component/CurrentTotal.js';
+// import History from './component/History.js';
 
 class App extends Component {
   constructor() {
@@ -11,13 +12,16 @@ class App extends Component {
       total: 0
     }
   }
+
   increasaNumber= (inputNumber)=>{
+    console.log('IN Add to Number', inputNumber);
     this.setState({
-      total: this.state.total += parseInt(inputNumber)
+      total: this.state.total + inputNumber
   })
   }
 
   decreaseNumber= (inputNumber)=>{
+    console.log('IN Minus number', inputNumber);
     this.setState({
       total: this.state.total - inputNumber
   })
@@ -33,8 +37,9 @@ class App extends Component {
                      increasaNumber = {this.increasaNumber} />
           {/* <p>Current Total: {(this.state)}</p> */}
         {JSON.stringify(this.state)}  
-        <CurrentTotal />
-
+        <hr />
+        <CurrentTotal currentTotal={this.state.total}/>
+        {/* <History /> */}
       </div>
     );
   }

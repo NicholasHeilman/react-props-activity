@@ -4,13 +4,13 @@ class EnterNumber extends Component {
     constructor(props){
         super(props);
         this.state = {
-            Number: '' ,
+            Number: 0 ,
         }
     }
 
     onIncrementNumber = (event)=> {
         this.setState({
-            Number: event.target.value,
+            Number: parseInt(event.target.value),
         })
     }
     
@@ -31,7 +31,7 @@ class EnterNumber extends Component {
         <button classeName="UpBtn"
                 onClick={this.addNumber}>Add </button>
         <input onChange={this.onIncrementNumber} 
-               type="text" 
+               type="number" 
                placeholder="Enter Number" />
         <button classeName="DownBtn"
                 onClick={this.minusNumber}>Minus</button>
