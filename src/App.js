@@ -3,13 +3,14 @@ import './App.css';
 import Header from './component/Header.js';
 import EnterNumber from './component/EnterNumber.js';
 import CurrentTotal from './component/CurrentTotal.js';
-// import History from './component/History.js';
+import History from './component/History.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      total: 0
+      total: 0,
+      history: [{value:5}, {value:3}],
     }
   }
 
@@ -26,6 +27,12 @@ class App extends Component {
       total: this.state.total - inputNumber
   })
   }
+  addToHistory = (itemToAdd) => {
+      this.setState({
+        history: [...this.state.history, itemToAdd]
+      })
+  }
+
   render() {
     return (
       <div className="App">
@@ -38,8 +45,9 @@ class App extends Component {
           {/* <p>Current Total: {(this.state)}</p> */}
         {JSON.stringify(this.state)}  
         <hr />
-        <CurrentTotal currentTotal={this.state.total}/>
-        {/* <History /> */}
+        <CurrentTotal currentTotal={this.state.total}
+                      addToHistory={this.state.history} />
+        <History history={this.state.history} />
       </div>
     );
   }
